@@ -94,10 +94,9 @@ jobs:
       - name: Setup Database
         run: |
           cp config/database.yml.github config/database.yml
-          bundle exec rails db:create
-          bundle exec rails db:schema:load
-      - name: 'Run specs'
-        run: bundle exec rspec spec/
+          bundle exec rake parallel:create parallel:load_schema
+      - name: 'Run specs parallel'
+        run: bundle exec parallel_rspec spec/
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4

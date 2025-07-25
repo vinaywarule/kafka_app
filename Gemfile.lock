@@ -173,6 +173,8 @@ GEM
     nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     parallel (1.27.0)
+    parallel_tests (5.3.1)
+      parallel
     parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
@@ -344,6 +346,7 @@ DEPENDENCIES
   jbuilder
   karafka
   mysql2
+  parallel_tests
   puma (>= 5.0)
   rails (~> 7.2.2, >= 7.2.2.1)
   rspec-rails

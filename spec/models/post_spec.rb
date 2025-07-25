@@ -53,7 +53,7 @@ RSpec.describe Post, type: :model do
 
     it 'calls call_after_update after update' do
       post.save
-      expect(post).to receive(:call_after_update)
+      expect(post).to receive(:call_after_updates)
       post.update(title: "Updated Title")
     end
   end

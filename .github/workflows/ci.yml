@@ -94,8 +94,7 @@ jobs:
       - name: Setup Database
         run: |
           cp config/database.yml.github config/database.yml
-          bundle exec rails db:drop
-          bundle exec rake parallel:drop parallel:create parallel:load_schema
+          PARALLEL_TEST_PROCESSORS=4 RAILS_ENV=test bundle exec rake parallel:drop parallel:create parallel:load_schema
       - name: 'Run specs parallel'
         run: bundle exec parallel_rspec spec/
 
